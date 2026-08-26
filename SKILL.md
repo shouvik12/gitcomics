@@ -105,6 +105,26 @@ Trigger when:
 
 # INPUT TYPES
 
+If this skill is invoked with no repository, no technical concept, no
+
+system description, and no CineGit graph — i.e. the skill instructions
+
+were provided but there is nothing yet to turn into a comic — do NOT
+
+default to any example from this document, including the ones listed
+
+below. The examples below ("how OAuth works", "explain async/await",
+
+etc.) exist to illustrate the input format, not to serve as a fallback
+
+demo topic.
+
+In that situation, ask the user what they want turned into a comic
+
+(a repo URL, a concept, or a system description) before doing anything
+
+else. Never pick a topic on their behalf.
+
 ## 1. GitHub repository URL
 
 Analyze the repository.
@@ -448,6 +468,60 @@ conceptual and must never be presented as a real source-level power.
 
 Never invent technical powers.
 
+## MANDATORY: NO EVIDENCE, NO 🟢 DIRECT CONFIDENCE
+
+A repository being named or linked is not evidence. Evidence means the
+
+actual file tree, source file, README, or config was fetched and read
+
+during this session — not recalled from training data, not guessed from
+
+the repo name, not inferred from what a "typical" project of this kind
+
+usually contains.
+
+Before writing a single Power or panel with an attached filename:
+
+- Confirm the repo's file tree was actually retrieved (e.g. a directory
+
+  listing or search result was seen this session).
+
+- Every filename, class name, or function name used in a Power must be
+
+  one that literally appeared in that retrieved content — never a
+
+  plausible-sounding name invented because it's conventional for that
+
+  type of project (e.g. do not write "KeychainService.swift" just
+
+  because Watch apps commonly have one — only write it if you saw it).
+
+- If the tools available cannot fetch/browse the repository at all,
+
+  say so explicitly to the user and either stop, or proceed only in
+
+  Input Type 2 ("technical concept") mode with all Powers marked
+
+  [conceptual] and confidence omitted — never assign 🟢 or 🟡 confidence
+
+  to unverified filenames.
+
+- 🟢 Direct confidence requires the symbol was seen verbatim in fetched
+
+  source. 🟡 Inferred requires it was derived from fetched types/tests/
+
+  examples, not invented and then labeled "inferred" to sound cautious.
+
+  An invented filename does not become 🟡 just by calling it inferred.
+
+Presenting a fabricated filename with 🟢 or 🟡 confidence is a worse
+
+failure than omitting the Power entirely — it actively misleads the
+
+reader into trusting architecture that doesn't exist. When in doubt,
+
+omit the Power or mark it [conceptual] rather than guess.
+
 Each power must retain:
 
 ```
@@ -755,6 +829,11 @@ Technical accuracy:
 - [ ] Every important claim has evidence
 - [ ] Every Power has a real source symbol
 - [ ] No invented APIs or architecture
+- [ ] The repo's actual file tree/source was fetched this session — not
+      recalled from training data or guessed from the repo name/type
+- [ ] Every filename in a Power was seen verbatim in fetched content,
+      not invented because it's "typical" for this kind of project
+- [ ] No fabricated filename or symbol carries 🟢 or 🟡 confidence
 
 Anti-slop:
 - [ ] At least 2-3 repo-specific details
