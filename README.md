@@ -6,6 +6,8 @@ Turn any GitHub repository into an 8-panel comic strip. Shareable PNG. Interacti
 
 ## Example
 
+**[→ View the interactive comic](https://shouvik12.github.io/gitcomics/examples/envoy_comic.html)**
+
 ![envoy comic](examples/envoy_comic.png)
 
 *envoyproxy/envoy — "The Filter Chain Never Skips a Step." Every claim in this comic traces back to a real file: `conn_manager_impl.cc`, `filter_manager.cc`, and the HTTP connection manager proto.*
@@ -15,20 +17,33 @@ Each example ships as three files:
 | File | What it's for |
 |---|---|
 | `examples/envoy_comic.png` | The shareable image — post it on X, Reddit, Slack, or embed it anywhere a normal image works. |
-| `examples/envoy_comic.html` | An interactive version of the same comic — open it in any browser (double-click the file, or drag it into a browser tab) to view it larger and read the Powers manifest at the bottom. |
+| `examples/envoy_comic.html` | The interactive version — [view it live](https://shouvik12.github.io/gitcomics/examples/envoy_comic.html), no download needed. Includes a clickable Powers table that links straight to the real source lines on GitHub. |
 | `examples/envoy_comic.svg` | The canonical vector source both the PNG and HTML are generated from — edit this if you want to tweak colors, text, or panel layout by hand. |
 
-To view the HTML locally after cloning the repo:
-
-```bash
-open examples/envoy_comic.html        # macOS
-xdg-open examples/envoy_comic.html    # Linux
-start examples/envoy_comic.html       # Windows
-```
-
-Or just navigate to the file in GitHub and click **"View raw"** — GitHub doesn't render HTML inline, so download it or clone the repo to view it properly in a browser.
+The live version is served via [GitHub Pages](https://shouvik12.github.io/gitcomics/) — every HTML file in `examples/` is viewable the same way, at `https://shouvik12.github.io/gitcomics/examples/{filename}.html`.
 
 ## How to use
+
+> **Requires a tool that can actually browse/fetch the repository.**
+> GitComics' entire pipeline is `Repository → Evidence → Story → SVG`
+> — step one is reading real files from GitHub. If the model or agent
+> you paste `SKILL.md` into has no web/browsing tool enabled, it **cannot**
+> gather real evidence, and it will silently fabricate plausible-sounding
+> filenames and architecture instead — even while labeling them
+> "Evidence: ..." or 🟢. This is not a hypothetical: it's a common failure
+> mode we've seen firsthand when running the skill in tools without
+> browsing enabled.
+>
+> Before trusting any output, confirm the tool actually fetched the repo.
+> If unsure, ask it directly: *"Did you fetch [repo URL], or write this
+> from the name alone? Do you have a tool that can browse GitHub?"*
+> If it says no — don't trust the comic. Every filename and technical
+> claim in it is likely invented, regardless of confidence labels shown.
+>
+> Confirmed to work: **claude.ai** (web search enabled by default),
+> **Claude Code** (reads the actual local/cloned repo), any agent with a
+> GitHub API/MCP connector. Not confirmed / known to fail silently:
+> chat surfaces with no browsing tool enabled (e.g. some Gemini modes).
 
 ### Quickstart (claude.ai)
 
