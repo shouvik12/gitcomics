@@ -1,0 +1,27 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Node (if using Playwright/tooling for rasterization)
+node_modules/
+npm-debug.log*
+
+# Python (if using cairosvg or similar tooling)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Generated comic scratch files — keep only what's in examples/
+*.tmp
+/output/
+/scratch/
+
+# Environment
+.env
+.env.local

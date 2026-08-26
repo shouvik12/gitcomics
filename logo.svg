@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="90" viewBox="0 0 320 90">
+  <rect width="320" height="90" fill="#1a1d26"/>
+  <g transform="translate(24, 24)">
+    <rect x="2" y="8" width="28" height="22" rx="2.5" fill="#1e2230" stroke="#1e3a5f" stroke-width="1"/>
+    <rect x="5" y="4" width="28" height="22" rx="2.5" fill="#18202e" stroke="#2a4a7a" stroke-width="1"/>
+    <rect x="8" y="0" width="28" height="22" rx="2.5" fill="#1a1d26" stroke="#33aaff" stroke-width="1.5"/>
+    <line x1="8" y1="8" x2="36" y2="8" stroke="#33aaff" stroke-width="0.8" opacity="0.35"/>
+    <line x1="8" y1="15" x2="36" y2="15" stroke="#33aaff" stroke-width="0.8" opacity="0.35"/>
+    <line x1="21" y1="0" x2="21" y2="22" stroke="#33aaff" stroke-width="0.8" opacity="0.35"/>
+    <circle cx="14.5" cy="4" r="2" fill="#33aaff"/>
+    <text x="46" y="17" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="800" fill="#33aaff">git</text>
+    <text x="76" y="17" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="800" fill="#e8e8e8">comics</text>
+    <text x="46" y="34" font-family="Courier New,monospace" font-size="10" fill="#445566" letter-spacing="1.5">every repo has a story</text>
+  </g>
+</svg>
