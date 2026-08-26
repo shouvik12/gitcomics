@@ -10,6 +10,24 @@ Turn any GitHub repository into an 8-panel comic strip. Shareable PNG. Interacti
 
 *envoyproxy/envoy — "The Filter Chain Never Skips a Step." Every claim in this comic traces back to a real file: `conn_manager_impl.cc`, `filter_manager.cc`, and the HTTP connection manager proto.*
 
+Each example ships as three files:
+
+| File | What it's for |
+|---|---|
+| `examples/envoy_comic.png` | The shareable image — post it on X, Reddit, Slack, or embed it anywhere a normal image works. |
+| `examples/envoy_comic.html` | An interactive version of the same comic — open it in any browser (double-click the file, or drag it into a browser tab) to view it larger and read the Powers manifest at the bottom. |
+| `examples/envoy_comic.svg` | The canonical vector source both the PNG and HTML are generated from — edit this if you want to tweak colors, text, or panel layout by hand. |
+
+To view the HTML locally after cloning the repo:
+
+```bash
+open examples/envoy_comic.html        # macOS
+xdg-open examples/envoy_comic.html    # Linux
+start examples/envoy_comic.html       # Windows
+```
+
+Or just navigate to the file in GitHub and click **"View raw"** — GitHub doesn't render HTML inline, so download it or clone the repo to view it properly in a browser.
+
 ## How to use
 
 ### Quickstart (claude.ai)

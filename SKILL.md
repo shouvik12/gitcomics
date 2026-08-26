@@ -510,9 +510,27 @@ SVG requirements:
 - All coordinates explicit
 - No external CSS dependencies
 - No browser-specific layout
-- No system-dependent emoji for layout-critical content
+- No system-dependent emoji for layout-critical content — use drawn vector
+  icons (paths, circles, rects) instead of emoji characters, since emoji
+  rendering is unreliable across SVG rasterizers (many render as blank
+  tofu boxes)
 - Fonts: prefer safe system fonts with good fallbacks
 - Use SVG rect, path, circle, line, text, g primitives
+
+MINIMUM FONT SIZES (mandatory — comics are shared and viewed at various
+sizes, so text must stay legible even when scaled down):
+- Panel title (character/component name): 15px minimum
+- Panel caption / scene description: 13px minimum
+- Dialogue: 12.5px minimum
+- Powers manifest table cells: 12.5px minimum, headers 11.5px minimum
+- Main comic title: 22px minimum
+- Main comic subtitle: 13px minimum
+- Only the publisher stamp and brand tagline may go smaller (9-10px),
+  since they are deliberately understated branding, not content the
+  reader needs to parse.
+
+Never ship a comic where caption or dialogue text is smaller than 12px —
+it will be unreadable once the PNG is scaled down for a social post.
 
 ---
 
@@ -558,10 +576,16 @@ Background: #1e2028 (deep slate)
 Panel fill: #252830
 Panel border: #2a2d38
 Accent: #33aaff (cyan)
-Success: #4a9977 (green)
-Caption text: #445566
-Dialogue text: #9bbccc
-Code/mono text: #4a9977
+Success: #4a9977 (green) — for legibility in text use the brighter tint #5fbd93
+Caption text: #7a8fa3 (must stay readable against #252830 — do not use
+  colors darker than this for caption text; #445566 and similar dark
+  grays fail contrast once a PNG is compressed or viewed at social-post
+  size, and are reserved only for the deliberately understated brand
+  tagline/publisher stamp, never for panel content)
+Dialogue text: #c3d9e8 (brighter than caption text — dialogue is the
+  most-read line in a panel and should stand out clearly)
+Code/mono text: #5fbd93
+
 Title text: #e8e8e8
 
 Every visual element must contribute to:
@@ -715,6 +739,10 @@ Rendering:
 - [ ] Publisher stamp is outside the panel grid
 - [ ] No essential visual depends on OS-specific emoji rendering
 - [ ] SVG is the only visual source of truth
+- [ ] Caption text is 13px or larger, dialogue is 12.5px or larger
+- [ ] No panel content uses colors darker than #7a8fa3 for text
+- [ ] Text is legible when the PNG is viewed at ~600px wide (typical
+      social-post scale) — zoom out and check before shipping
 
 ---
 

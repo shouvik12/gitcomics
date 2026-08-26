@@ -29,13 +29,13 @@
 
   <!-- Meta tags -->
   <g transform="translate(0,74)" font-family="Arial,Helvetica,sans-serif">
-    <text x="1160" y="0" text-anchor="end" font-size="11" fill="#9bbccc">envoyproxy/envoy</text>
-    <circle cx="1052" cy="12" r="4" fill="#4a9977"/><text x="1160" y="16" text-anchor="end" font-size="10" fill="#4a9977">direct-evidence: conn_manager_impl.cc, filter_manager.cc</text>
+    <text x="1160" y="0" text-anchor="end" font-size="13" fill="#c3d9e8">envoyproxy/envoy</text>
+    <circle cx="1052" cy="12" r="4" fill="#4a9977"/><text x="1160" y="16" text-anchor="end" font-size="12" fill="#5fbd93">direct-evidence: conn_manager_impl.cc, filter_manager.cc</text>
   </g>
 
   <!-- Title -->
-  <text x="600" y="112" text-anchor="middle" font-size="22" font-weight="800" fill="#e8e8e8">The Filter Chain Never Skips a Step</text>
-  <text x="600" y="132" text-anchor="middle" font-size="11" fill="#445566" font-family="Courier New,monospace">how a request survives Envoy's HTTP Connection Manager</text>
+  <text x="600" y="112" text-anchor="middle" font-size="24" font-weight="800" fill="#f2f2f2">The Filter Chain Never Skips a Step</text>
+  <text x="600" y="132" text-anchor="middle" font-size="13" fill="#7a8fa3" font-family="Courier New,monospace">how a request survives Envoy's HTTP Connection Manager</text>
 
   <!-- ===================== PANEL GRID ===================== -->
   <!-- Grid geometry: 2-col rows for 1-4, full-width row 5, 2-col rows 6-7, full-width row 8 -->
@@ -43,19 +43,19 @@
   <!-- PANEL 1 -->
   <g transform="translate(50,160)">
     <rect width="520" height="230" rx="6" fill="#252830" stroke="#2a2d38" stroke-width="3"/>
-    <text x="14" y="24" font-size="11" fill="#33aaff" font-weight="700">01</text>
+    <text x="14" y="24" font-size="13" fill="#33aaff" font-weight="700">01</text>
     <circle cx="260" cy="52" r="20" fill="none" stroke="#33aaff" stroke-width="2"/>
     <path d="M 240 52 L 280 52 M 260 32 L 260 72 M 246 40 Q 260 52 246 64 M 274 40 Q 260 52 274 64" stroke="#33aaff" stroke-width="1.4" fill="none"/>
-    <text x="260" y="100" text-anchor="middle" font-size="13" fill="#e8e8e8" font-weight="700">Request</text>
-    <text x="260" y="150" text-anchor="middle" font-size="11" fill="#445566" font-family="Courier New,monospace">a byte stream, nothing more.</text>
-    <text x="260" y="168" text-anchor="middle" font-size="11" fill="#445566" font-family="Courier New,monospace">no headers parsed yet.</text>
-    <text x="20" y="204" font-size="10.5" fill="#9bbccc">Request: "just get me to the backend."</text>
+    <text x="260" y="100" text-anchor="middle" font-size="15" fill="#e8e8e8" font-weight="700">Request</text>
+    <text x="260" y="148" text-anchor="middle" font-size="13" fill="#7a8fa3" font-family="Courier New,monospace">a byte stream, nothing more.</text>
+    <text x="260" y="170" text-anchor="middle" font-size="13" fill="#7a8fa3" font-family="Courier New,monospace">no headers parsed yet.</text>
+    <text x="20" y="204" font-size="12.5" fill="#c3d9e8">Request: "just get me to the backend."</text>
   </g>
 
   <!-- PANEL 2 -->
   <g transform="translate(630,160)">
     <rect width="520" height="230" rx="6" fill="#252830" stroke="#2a2d38" stroke-width="3"/>
-    <text x="14" y="24" font-size="11" fill="#33aaff" font-weight="700">02</text>
+    <text x="14" y="24" font-size="13" fill="#33aaff" font-weight="700">02</text>
     <g stroke="#33aaff" stroke-width="2" fill="none">
       <line x1="234" y1="66" x2="234" y2="38"/>
       <line x1="246" y1="66" x2="246" y2="30"/>
@@ -64,40 +64,40 @@
       <line x1="282" y1="66" x2="282" y2="50"/>
       <line x1="226" y1="66" x2="294" y2="66"/>
     </g>
-    <text x="260" y="100" text-anchor="middle" font-size="13" fill="#e8e8e8" font-weight="700">ConnectionManagerImpl</text>
-    <text x="260" y="150" text-anchor="middle" font-size="11" fill="#445566" font-family="Courier New,monospace">codec dispatches the bytes,</text>
-    <text x="260" y="168" text-anchor="middle" font-size="11" fill="#445566" font-family="Courier New,monospace">a new stream is born.</text>
-    <text x="20" y="204" font-size="10.5" fill="#9bbccc">HCM: "New stream. Codec says it's real. Starting the chain."</text>
+    <text x="260" y="100" text-anchor="middle" font-size="15" fill="#e8e8e8" font-weight="700">ConnectionManagerImpl</text>
+    <text x="260" y="148" text-anchor="middle" font-size="13" fill="#7a8fa3" font-family="Courier New,monospace">codec dispatches the bytes,</text>
+    <text x="260" y="170" text-anchor="middle" font-size="13" fill="#7a8fa3" font-family="Courier New,monospace">a new stream is born.</text>
+    <text x="20" y="204" font-size="12.5" fill="#c3d9e8">HCM: "New stream. Codec says it's real. Starting the chain."</text>
   </g>
 
   <!-- PANEL 3 -->
   <g transform="translate(50,410)">
     <rect width="520" height="230" rx="6" fill="#252830" stroke="#2a2d38" stroke-width="3"/>
-    <text x="14" y="24" font-size="11" fill="#33aaff" font-weight="700">03</text>
+    <text x="14" y="24" font-size="13" fill="#33aaff" font-weight="700">03</text>
     <path d="M 260 30 L 280 38 L 280 58 Q 280 72 260 78 Q 240 72 240 58 L 240 38 Z" fill="none" stroke="#33aaff" stroke-width="2"/>
-    <text x="260" y="100" text-anchor="middle" font-size="13" fill="#e8e8e8" font-weight="700">FilterManager</text>
-    <text x="260" y="150" text-anchor="middle" font-size="11" fill="#445566" font-family="Courier New,monospace">decode iteration begins —</text>
-    <text x="260" y="168" text-anchor="middle" font-size="11" fill="#445566" font-family="Courier New,monospace">one filter at a time, in order.</text>
-    <text x="20" y="204" font-size="10.5" fill="#9bbccc">FilterManager: "Order matters. Nobody cuts the line."</text>
+    <text x="260" y="100" text-anchor="middle" font-size="15" fill="#e8e8e8" font-weight="700">FilterManager</text>
+    <text x="260" y="148" text-anchor="middle" font-size="13" fill="#7a8fa3" font-family="Courier New,monospace">decode iteration begins —</text>
+    <text x="260" y="170" text-anchor="middle" font-size="13" fill="#7a8fa3" font-family="Courier New,monospace">one filter at a time, in order.</text>
+    <text x="20" y="204" font-size="12.5" fill="#c3d9e8">FilterManager: "Order matters. Nobody cuts the line."</text>
   </g>
 
   <!-- PANEL 4 -->
   <g transform="translate(630,410)">
     <rect width="520" height="230" rx="6" fill="#252830" stroke="#2a2d38" stroke-width="3"/>
-    <text x="14" y="24" font-size="11" fill="#33aaff" font-weight="700">04</text>
+    <text x="14" y="24" font-size="13" fill="#33aaff" font-weight="700">04</text>
     <rect x="246" y="48" width="28" height="22" rx="3" fill="none" stroke="#33aaff" stroke-width="2"/>
     <path d="M 251 48 L 251 38 Q 251 28 260 28 Q 269 28 269 38 L 269 48" fill="none" stroke="#33aaff" stroke-width="2"/>
     <circle cx="260" cy="59" r="2.5" fill="#33aaff"/>
-    <text x="260" y="100" text-anchor="middle" font-size="13" fill="#e8e8e8" font-weight="700">HTTP Filter</text>
-    <text x="260" y="150" text-anchor="middle" font-size="11" fill="#445566" font-family="Courier New,monospace">inspects headers, can halt</text>
-    <text x="260" y="168" text-anchor="middle" font-size="11" fill="#445566" font-family="Courier New,monospace">the chain right here.</text>
-    <text x="20" y="204" font-size="10.5" fill="#9bbccc">Filter: "I don't like this header. We stop."</text>
+    <text x="260" y="100" text-anchor="middle" font-size="15" fill="#e8e8e8" font-weight="700">HTTP Filter</text>
+    <text x="260" y="148" text-anchor="middle" font-size="13" fill="#7a8fa3" font-family="Courier New,monospace">inspects headers, can halt</text>
+    <text x="260" y="170" text-anchor="middle" font-size="13" fill="#7a8fa3" font-family="Courier New,monospace">the chain right here.</text>
+    <text x="20" y="204" font-size="12.5" fill="#c3d9e8">Filter: "I don't like this header. We stop."</text>
   </g>
 
   <!-- PANEL 5 — WIDE establishing panel -->
   <g transform="translate(50,660)">
     <rect width="1100" height="220" rx="6" fill="#252830" stroke="#2a2d38" stroke-width="3"/>
-    <text x="14" y="24" font-size="11" fill="#33aaff" font-weight="700">05</text>
+    <text x="14" y="24" font-size="13" fill="#33aaff" font-weight="700">05</text>
     <!-- HCM icon -->
     <g stroke="#33aaff" stroke-width="2" fill="none" transform="translate(150,90)">
       <line x1="-16" y1="24" x2="-16" y2="0"/><line x1="-4" y1="24" x2="-4" y2="-8"/>
@@ -116,88 +116,88 @@
     <line x1="200" y1="110" x2="330" y2="110" stroke="#33aaff" stroke-width="1.5" opacity="0.5"/>
     <line x1="460" y1="110" x2="580" y2="110" stroke="#33aaff" stroke-width="1.5" opacity="0.5"/>
     <line x1="710" y1="110" x2="830" y2="110" stroke="#33aaff" stroke-width="1.5" opacity="0.5"/>
-    <text x="550" y="170" text-anchor="middle" font-size="13" fill="#e8e8e8" font-weight="700">The whole chain, visible at once</text>
-    <text x="550" y="196" text-anchor="middle" font-size="11" fill="#445566" font-family="Courier New,monospace">HCM → filter → filter → router — no filter skips its turn, ever.</text>
+    <text x="550" y="170" text-anchor="middle" font-size="15" fill="#e8e8e8" font-weight="700">The whole chain, visible at once</text>
+    <text x="550" y="196" text-anchor="middle" font-size="13" fill="#7a8fa3" font-family="Courier New,monospace">HCM → filter → filter → router — no filter skips its turn, ever.</text>
   </g>
 
   <!-- PANEL 6 -->
   <g transform="translate(50,900)">
     <rect width="520" height="230" rx="6" fill="#252830" stroke="#2a2d38" stroke-width="3"/>
-    <text x="14" y="24" font-size="11" fill="#33aaff" font-weight="700">06</text>
+    <text x="14" y="24" font-size="13" fill="#33aaff" font-weight="700">06</text>
     <g stroke="#33aaff" stroke-width="2" fill="none">
       <circle cx="260" cy="52" r="20"/>
       <line x1="252" y1="52" x2="268" y2="52"/>
       <line x1="260" y1="44" x2="260" y2="60"/>
     </g>
-    <text x="260" y="100" text-anchor="middle" font-size="13" fill="#e8e8e8" font-weight="700">Local Reply Path</text>
-    <text x="260" y="150" text-anchor="middle" font-size="11" fill="#445566" font-family="Courier New,monospace">a filter said no —</text>
-    <text x="260" y="168" text-anchor="middle" font-size="11" fill="#445566" font-family="Courier New,monospace">reply built without leaving the chain.</text>
-    <text x="20" y="204" font-size="10.5" fill="#9bbccc">Medic: "sendLocalReplyViaFilterChain. Nobody upstream even knows."</text>
+    <text x="260" y="100" text-anchor="middle" font-size="15" fill="#e8e8e8" font-weight="700">Local Reply Path</text>
+    <text x="260" y="148" text-anchor="middle" font-size="13" fill="#7a8fa3" font-family="Courier New,monospace">a filter said no —</text>
+    <text x="260" y="170" text-anchor="middle" font-size="13" fill="#7a8fa3" font-family="Courier New,monospace">reply built without leaving the chain.</text>
+    <text x="20" y="204" font-size="12.5" fill="#c3d9e8">Medic: "sendLocalReplyViaFilterChain. Nobody upstream even knows."</text>
   </g>
 
   <!-- PANEL 7 -->
   <g transform="translate(630,900)">
     <rect width="520" height="230" rx="6" fill="#252830" stroke="#2a2d38" stroke-width="3"/>
-    <text x="14" y="24" font-size="11" fill="#33aaff" font-weight="700">07</text>
+    <text x="14" y="24" font-size="13" fill="#33aaff" font-weight="700">07</text>
     <g stroke="#33aaff" stroke-width="2" fill="none">
       <rect x="240" y="34" width="40" height="36" rx="2"/>
       <line x1="240" y1="44" x2="280" y2="44"/>
       <line x1="248" y1="52" x2="272" y2="52"/>
       <line x1="248" y1="60" x2="272" y2="60"/>
     </g>
-    <text x="260" y="100" text-anchor="middle" font-size="13" fill="#e8e8e8" font-weight="700">RDS Route Config</text>
-    <text x="260" y="150" text-anchor="middle" font-size="11" fill="#445566" font-family="Courier New,monospace">stat_prefix tags the request,</text>
-    <text x="260" y="168" text-anchor="middle" font-size="11" fill="#445566" font-family="Courier New,monospace">route_config_name picks the road.</text>
-    <text x="20" y="204" font-size="10.5" fill="#9bbccc">Archivist: "Every listener gets its own stat_prefix. No mixing books."</text>
+    <text x="260" y="100" text-anchor="middle" font-size="15" fill="#e8e8e8" font-weight="700">RDS Route Config</text>
+    <text x="260" y="148" text-anchor="middle" font-size="13" fill="#7a8fa3" font-family="Courier New,monospace">stat_prefix tags the request,</text>
+    <text x="260" y="170" text-anchor="middle" font-size="13" fill="#7a8fa3" font-family="Courier New,monospace">route_config_name picks the road.</text>
+    <text x="20" y="204" font-size="12.5" fill="#c3d9e8">Archivist: "Every listener gets its own stat_prefix. No mixing books."</text>
   </g>
 
   <!-- PANEL 8 — resolution, wide -->
   <g transform="translate(50,1150)">
     <rect width="1100" height="230" rx="6" fill="#252830" stroke="#33aaff" stroke-width="3"/>
-    <text x="14" y="24" font-size="11" fill="#33aaff" font-weight="700">08</text>
+    <text x="14" y="24" font-size="13" fill="#33aaff" font-weight="700">08</text>
     <g stroke="#4a9977" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="550" cy="80" r="26" stroke="#33aaff" stroke-width="2"/>
       <path d="M 538 80 L 547 90 L 564 70"/>
     </g>
-    <text x="550" y="150" text-anchor="middle" font-size="13" fill="#e8e8e8" font-weight="700">Response, fully accounted for</text>
-    <text x="550" y="176" text-anchor="middle" font-size="11" fill="#445566" font-family="Courier New,monospace">Every filter that touched this request left a trace. That's the whole point.</text>
-    <text x="450" y="204" font-size="10.5" fill="#9bbccc" text-anchor="middle">Response: "Nothing about me was assumed. Every step, someone signed off."</text>
+    <text x="550" y="150" text-anchor="middle" font-size="15" fill="#e8e8e8" font-weight="700">Response, fully accounted for</text>
+    <text x="550" y="176" text-anchor="middle" font-size="13" fill="#7a8fa3" font-family="Courier New,monospace">Every filter that touched this request left a trace. That's the whole point.</text>
+    <text x="450" y="204" font-size="12.5" fill="#c3d9e8" text-anchor="middle">Response: "Nothing about me was assumed. Every step, someone signed off."</text>
   </g>
 
   <!-- ===================== POWERS MANIFEST (bottom, outside panel grid) ===================== -->
   <g transform="translate(50,1410)">
-    <path d="M 4 -10 L -4 2 L 2 2 L -2 12 L 8 -2 L 2 -2 Z" fill="#33aaff"/><text x="16" y="0" font-size="13" font-weight="700" fill="#33aaff">Powers used in this comic</text>
+    <path d="M 4 -10 L -4 2 L 2 2 L -2 12 L 8 -2 L 2 -2 Z" fill="#33aaff"/><text x="16" y="0" font-size="15" font-weight="700" fill="#33aaff">Powers used in this comic</text>
     <line x1="0" y1="10" x2="1100" y2="10" stroke="#2a2d38" stroke-width="1"/>
 
-    <text x="0" y="34" font-size="10" fill="#666" font-weight="700">POWER</text>
-    <text x="260" y="34" font-size="10" fill="#666" font-weight="700">TYPE</text>
-    <text x="420" y="34" font-size="10" fill="#666" font-weight="700">LOCATION</text>
-    <text x="750" y="34" font-size="10" fill="#666" font-weight="700">PURPOSE</text>
-    <text x="1020" y="34" font-size="10" fill="#666" font-weight="700">CONF.</text>
+    <text x="0" y="34" font-size="11.5" fill="#8899aa" font-weight="700">POWER</text>
+    <text x="260" y="34" font-size="11.5" fill="#8899aa" font-weight="700">TYPE</text>
+    <text x="420" y="34" font-size="11.5" fill="#8899aa" font-weight="700">LOCATION</text>
+    <text x="750" y="34" font-size="11.5" fill="#8899aa" font-weight="700">PURPOSE</text>
+    <text x="1020" y="34" font-size="11.5" fill="#8899aa" font-weight="700">CONF.</text>
     <line x1="0" y1="42" x2="1100" y2="42" stroke="#2a2d38" stroke-width="1"/>
 
-    <text x="0" y="62" font-size="10.5" fill="#9bbccc">ConnectionManagerImpl</text>
-    <text x="260" y="62" font-size="10.5" fill="#4a9977">class</text>
-    <text x="420" y="62" font-size="10.5" fill="#445566">source/common/http/conn_manager_impl.h</text>
-    <text x="750" y="62" font-size="10.5" fill="#9bbccc">orchestrates connection + stream lifecycle</text>
+    <text x="0" y="62" font-size="12.5" fill="#c3d9e8">ConnectionManagerImpl</text>
+    <text x="260" y="62" font-size="12.5" fill="#5fbd93">class</text>
+    <text x="420" y="62" font-size="12.5" fill="#8899aa">source/common/http/conn_manager_impl.h</text>
+    <text x="750" y="62" font-size="12.5" fill="#c3d9e8">orchestrates connection + stream lifecycle</text>
     <circle cx="1024" cy="58" r="4" fill="#4a9977"/>
 
-    <text x="0" y="86" font-size="10.5" fill="#9bbccc">FilterManager decode/encode iteration</text>
-    <text x="260" y="86" font-size="10.5" fill="#4a9977">function</text>
-    <text x="420" y="86" font-size="10.5" fill="#445566">source/common/http/filter_manager.cc</text>
-    <text x="750" y="86" font-size="10.5" fill="#9bbccc">walks the HTTP filter chain in order</text>
+    <text x="0" y="86" font-size="12.5" fill="#c3d9e8">FilterManager decode/encode iteration</text>
+    <text x="260" y="86" font-size="12.5" fill="#5fbd93">function</text>
+    <text x="420" y="86" font-size="12.5" fill="#8899aa">source/common/http/filter_manager.cc</text>
+    <text x="750" y="86" font-size="12.5" fill="#c3d9e8">walks the HTTP filter chain in order</text>
     <circle cx="1024" cy="82" r="4" fill="#4a9977"/>
 
-    <text x="0" y="110" font-size="10.5" fill="#9bbccc">sendLocalReplyViaFilterChain</text>
-    <text x="260" y="110" font-size="10.5" fill="#4a9977">function</text>
-    <text x="420" y="110" font-size="10.5" fill="#445566">source/common/http/filter_manager.cc</text>
-    <text x="750" y="110" font-size="10.5" fill="#9bbccc">short-circuits chain, builds reply locally</text>
+    <text x="0" y="110" font-size="12.5" fill="#c3d9e8">sendLocalReplyViaFilterChain</text>
+    <text x="260" y="110" font-size="12.5" fill="#5fbd93">function</text>
+    <text x="420" y="110" font-size="12.5" fill="#8899aa">source/common/http/filter_manager.cc</text>
+    <text x="750" y="110" font-size="12.5" fill="#c3d9e8">short-circuits chain, builds reply locally</text>
     <circle cx="1024" cy="106" r="4" fill="#4a9977"/>
 
-    <text x="0" y="134" font-size="10.5" fill="#9bbccc">HttpConnectionManager.stat_prefix / rds</text>
-    <text x="260" y="134" font-size="10.5" fill="#4a9977">config</text>
-    <text x="420" y="134" font-size="10.5" fill="#445566">api http_connection_manager/v3 proto</text>
-    <text x="750" y="134" font-size="10.5" fill="#9bbccc">per-listener stats + dynamic route lookup</text>
+    <text x="0" y="134" font-size="12.5" fill="#c3d9e8">HttpConnectionManager.stat_prefix / rds</text>
+    <text x="260" y="134" font-size="12.5" fill="#5fbd93">config</text>
+    <text x="420" y="134" font-size="12.5" fill="#8899aa">api http_connection_manager/v3 proto</text>
+    <text x="750" y="134" font-size="12.5" fill="#c3d9e8">per-listener stats + dynamic route lookup</text>
     <circle cx="1024" cy="130" r="4" fill="#4a9977"/>
   </g>
 
