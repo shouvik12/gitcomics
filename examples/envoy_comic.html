@@ -8,6 +8,7 @@
   .comic-frame { max-width:900px; width:100%; box-shadow:0 20px 60px rgba(0,0,0,0.5); border-radius:8px; overflow:hidden; }
   .comic-frame svg { width:100%; height:auto; display:block; }
   footer { color:#8899aa; font-size:12px; margin-top:16px; font-family:'Courier New',monospace; }
+  a:hover { text-decoration:underline !important; }
 </style>
 </head>
 <body>
@@ -220,6 +221,52 @@
 </svg>
 
 </div>
+<p style="max-width:900px; width:100%; color:#7a8fa3; font-size:12px; margin:24px 0 0; font-family:'Courier New',monospace;">The panel above is a flat image (safe for sharing as PNG). The table below is the same data, live — click any location to open the real source file on GitHub.</p>
+<details open style="max-width:900px; width:100%; margin-top:20px; font-family:Arial,Helvetica,sans-serif; color:#e8e8e8;">
+  <summary style="font-size:14px; color:#33aaff; font-weight:700; cursor:pointer; padding:8px 0;">⚡ Powers used in this comic — click through to source</summary>
+  <table style="width:100%; border-collapse:collapse; font-size:13px; margin-top:8px;">
+    <thead>
+      <tr style="border-bottom:1px solid #2a2d38;">
+        <th style="text-align:left; padding:8px 10px; color:#8899aa; font-size:11.5px;">POWER</th>
+        <th style="text-align:left; padding:8px 10px; color:#8899aa; font-size:11.5px;">TYPE</th>
+        <th style="text-align:left; padding:8px 10px; color:#8899aa; font-size:11.5px;">LOCATION</th>
+        <th style="text-align:left; padding:8px 10px; color:#8899aa; font-size:11.5px;">PURPOSE</th>
+        <th style="text-align:left; padding:8px 10px; color:#8899aa; font-size:11.5px;">CONF.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid #1e2028;">
+        <td style="padding:10px; color:#c3d9e8;">ConnectionManagerImpl</td>
+        <td style="padding:10px; color:#5fbd93;">class</td>
+        <td style="padding:10px;"><a href="https://github.com/envoyproxy/envoy/blob/main/source/common/http/conn_manager_impl.h" style="color:#33aaff; text-decoration:none;" target="_blank" rel="noopener">source/common/http/conn_manager_impl.h</a></td>
+        <td style="padding:10px; color:#c3d9e8;">orchestrates connection + stream lifecycle</td>
+        <td style="padding:10px;">🟢</td>
+      </tr>
+      <tr style="border-bottom:1px solid #1e2028;">
+        <td style="padding:10px; color:#c3d9e8;">FilterManager decode/encode iteration</td>
+        <td style="padding:10px; color:#5fbd93;">function</td>
+        <td style="padding:10px;"><a href="https://github.com/envoyproxy/envoy/blob/main/source/common/http/filter_manager.cc" style="color:#33aaff; text-decoration:none;" target="_blank" rel="noopener">source/common/http/filter_manager.cc</a></td>
+        <td style="padding:10px; color:#c3d9e8;">walks the HTTP filter chain in order</td>
+        <td style="padding:10px;">🟢</td>
+      </tr>
+      <tr style="border-bottom:1px solid #1e2028;">
+        <td style="padding:10px; color:#c3d9e8;">sendLocalReplyViaFilterChain</td>
+        <td style="padding:10px; color:#5fbd93;">function</td>
+        <td style="padding:10px;"><a href="https://github.com/envoyproxy/envoy/blob/main/source/common/http/filter_manager.cc" style="color:#33aaff; text-decoration:none;" target="_blank" rel="noopener">source/common/http/filter_manager.cc</a></td>
+        <td style="padding:10px; color:#c3d9e8;">short-circuits chain, builds reply locally</td>
+        <td style="padding:10px;">🟢</td>
+      </tr>
+      <tr>
+        <td style="padding:10px; color:#c3d9e8;">HttpConnectionManager.stat_prefix / rds</td>
+        <td style="padding:10px; color:#5fbd93;">config</td>
+        <td style="padding:10px;"><a href="https://www.envoyproxy.io/docs/envoy/latest/api-v3/extensions/filters/network/http_connection_manager/v3/http_connection_manager.proto.html" style="color:#33aaff; text-decoration:none;" target="_blank" rel="noopener">http_connection_manager/v3 proto</a></td>
+        <td style="padding:10px; color:#c3d9e8;">per-listener stats + dynamic route lookup</td>
+        <td style="padding:10px;">🟢</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
+
 <footer>GitComics — every repo has a story · source: github.com/envoyproxy/envoy</footer>
 </body>
 </html>

@@ -666,9 +666,22 @@ For PNG: `npx playwright screenshot comic.html comic.png`"
 
 # POWERS MANIFEST HTML
 
+The Powers manifest baked into the canonical SVG (for PNG portability) is
+necessarily flat, non-clickable text — SVG text can't reliably carry
+working hyperlinks across all renderers.
+
+The HTML output must therefore include a SECOND copy of the manifest,
+placed after the embedded SVG, as real HTML with genuine `<a href>` links.
+This is the "Interactive evidence layer" referenced in the OUTPUT FORMAT
+structure — it is not optional and not the same node as the SVG text.
+
 ```html
-<details>
-<summary>⚡ Powers used in this comic</summary>
+<p>The panel above is a flat image (safe for sharing as PNG). The table
+below is the same data, live — click any location to open the real
+source file on GitHub.</p>
+
+<details open>
+<summary>⚡ Powers used in this comic — click through to source</summary>
 <table>
   <tr>
     <th>Power</th>
@@ -677,13 +690,32 @@ For PNG: `npx playwright screenshot comic.html comic.png`"
     <th>Purpose</th>
     <th>Confidence</th>
   </tr>
-  {power_rows}
+  <tr>
+    <td>{power_name}</td>
+    <td>{type}</td>
+    <td><a href="{verified_github_blob_url}" target="_blank" rel="noopener">{path}</a></td>
+    <td>{purpose}</td>
+    <td>{confidence}</td>
+  </tr>
+  {more_power_rows}
 </table>
 </details>
 ```
 
-Where possible make source locations link to GitHub.
-Never invent URLs or line numbers.
+Link construction rules:
+
+- Every `href` must be a URL that was actually seen during evidence
+  gathering (a real search result or fetched page) — never a URL built
+  by guessing the path pattern, even if the pattern looks obvious.
+- Standard pattern once verified: `https://github.com/{owner}/{repo}/blob/{branch}/{path}`.
+  Confirm the branch (`main` vs `master`) and the exact path from evidence
+  before using it — do not assume `main` by default.
+- If a power's exact file/line cannot be verified, link to the nearest
+  verified parent (e.g. the containing directory or the docs page) rather
+  than inventing a deeper path, and note in the purpose column that the
+  exact location is inferred.
+- Never invent line numbers. Only add a `#L123` fragment if that exact
+  line was confirmed in evidence.
 
 ---
 
@@ -743,6 +775,10 @@ Rendering:
 - [ ] No panel content uses colors darker than #7a8fa3 for text
 - [ ] Text is legible when the PNG is viewed at ~600px wide (typical
       social-post scale) — zoom out and check before shipping
+- [ ] HTML contains a second, real HTML powers table (not just the SVG's
+      flat text) with actual clickable `<a href>` links
+- [ ] Every link in that table was verified during evidence gathering,
+      not guessed from a URL pattern
 
 ---
 
