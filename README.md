@@ -6,7 +6,6 @@ Turn any GitHub repository into an 8-panel comic strip. Shareable PNG. Interacti
 
 ## Example
 
-**[→ View the interactive comic](https://shouvik12.github.io/gitcomics/examples/envoy_comic.html)**
 
 ![envoy comic](examples/envoy_comic.png)
 
@@ -20,7 +19,6 @@ Each example ships as three files:
 | `examples/envoy_comic.html` | The interactive version — [view it live](https://shouvik12.github.io/gitcomics/examples/envoy_comic.html), no download needed. Includes a clickable Powers table that links straight to the real source lines on GitHub. |
 | `examples/envoy_comic.svg` | The canonical vector source both the PNG and HTML are generated from — edit this if you want to tweak colors, text, or panel layout by hand. |
 
-The live version is served via [GitHub Pages](https://shouvik12.github.io/gitcomics/) — every HTML file in `examples/` is viewable the same way, at `https://shouvik12.github.io/gitcomics/examples/{filename}.html`.
 
 ## How to use
 
